@@ -1,4 +1,5 @@
 import Hapi from '@hapi/hapi';
+import type {} from '@lib/shared/types/hapi';
 import { appConfig } from '@lib/config/app.config';
 import { registerErrorHandler } from '@lib/shared/middleware/error-handler.middleware';
 import { databasePlugin } from './plugins/database.plugin';

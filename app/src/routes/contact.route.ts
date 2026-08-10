@@ -3,6 +3,7 @@ import { CONTACT_ROUTES } from '@lib/constants/api.constant';
 import { createContactRequestSchema } from '@lib/shared/schema/api/contact';
 import { paginationQuerySchema } from '@lib/shared/schema/api/common/pagination';
 import { contactController } from '@app/controller/contact/contact.controller';
+import type {} from '@lib/shared/types/hapi';
 
 export function registerContactRoutes(server: Server): void {
   server.route([
