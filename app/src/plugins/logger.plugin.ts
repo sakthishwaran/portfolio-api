@@ -4,10 +4,10 @@ import { logger } from '@lib/shared/logger/logger';
 export const loggerPlugin: Plugin<undefined> = {
   name: 'app/logger',
   register(server: Server) {
-    server.app.logger = logger;
+    const serverApp = server.app as typeof server.app & { logger: typeof logger };\n  serverApp.logger = logger;
 
     server.ext('onRequest', (request, h) => {
-      request.app.startTime = Date.now();
+      const requestApp = request.app as typeof request.app & { startTime?: number };\n  requestApp.startTime = Date.now();
       return h.continue;
     });
 

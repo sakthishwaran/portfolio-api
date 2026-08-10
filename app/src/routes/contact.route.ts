@@ -10,7 +10,7 @@ export function registerContactRoutes(server: Server): void {
       method: 'POST',
       path: CONTACT_ROUTES.BASE,
       options: {
-        validate: server.validatePayload(createContactRequestSchema),
+        validate: { payload: createZodValidator(createContactRequestSchema) },
         handler: contactController.create,
       },
     },
