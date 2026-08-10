@@ -6,7 +6,6 @@ async function seed(): Promise<void> {
   await db.insert(contacts).values({
     fullName: 'Jane Doe',
     email: 'jane.doe@example.com',
-    subject: 'Project Inquiry',
     message: 'Hi, I would love to discuss a potential project collaboration.',
   });
 
