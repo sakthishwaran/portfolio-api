@@ -107,6 +107,7 @@ controller -> operation -> repository -> shared schema -> database
 | --------------------- | ------------------------------------- |
 | `bun run dev`          | Start the server in watch mode        |
 | `bun run start`        | Start the server                      |
+| `bun run build`        | Build production bundle into dist     |
 | `bun run typecheck`    | Run TypeScript in `--noEmit` mode      |
 | `bun run lint`         | Lint the project                      |
 | `bun run format`       | Format the project with Prettier      |
