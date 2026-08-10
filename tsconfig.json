@@ -1,36 +1,40 @@
 {
   "compilerOptions": {
-    // Environment setup & latest features
-    "lib": ["ESNext"],
+    "lib": [
+      "ESNext"
+    ],
     "target": "ESNext",
-    "module": "Preserve",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "moduleDetection": "force",
-    "jsx": "react-jsx",
     "allowJs": true,
-    "types": ["bun"],
-
-    // Bundler mode
-    "moduleResolution": "bundler",
+    "types": [
+      "bun"
+    ],
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "noEmit": true,
-
-    // Path aliases
+    "baseUrl": ".",
     "paths": {
-      "@app/*": ["./app/src/*"],
-      "@lib/*": ["./lib/*"]
+      "@app/*": [
+        "./app/src/*"
+      ],
+      "@lib/*": [
+        "./lib/*"
+      ]
     },
-
-    // Best practices
     "strict": true,
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
-    // Some stricter flags (disabled by default)
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+  },
+  "include": [
+    "app/**/*.ts",
+    "api/**/*.ts",
+    "lib/**/*.ts"
+  ]
 }

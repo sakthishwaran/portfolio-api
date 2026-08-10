@@ -1,19 +1,17 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { createServer } from '../app/src/server';
 
-let serverPromise: ReturnType<typeof createServer> | null = null;
+let serverPromise: ReturnType<typeof createServer> | undefined;
 
 async function getServer() {
-  if (!serverPromise) {
-    serverPromise = createServer();
-  }
+  serverPromise ??= createServer();
   return serverPromise;
 }
 
 export default async function handler(
   req: IncomingMessage,
   res: ServerResponse,
-) {
+): Promise<void> {
   const server = await getServer();
 
   const response = await server.inject({

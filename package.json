@@ -2,11 +2,10 @@
   "name": "portfolio-api",
   "version": "1.0.0",
   "description": "Enterprise-grade Hapi.js backend for the Portfolio application.",
-  "module": "app/src/index.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --noEmit",
     "dev": "bun run --watch app/src/index.ts",
     "start": "bun run app/src/index.ts",
     "typecheck": "tsc --noEmit",
@@ -38,5 +37,6 @@
     "pino": "^10.3.1",
     "postgres": "^3.4.9",
     "zod": "^4.4.3"
-  }
+  },
+  "main": "api/index.ts"
 }
