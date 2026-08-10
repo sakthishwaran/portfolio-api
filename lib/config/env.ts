@@ -12,11 +12,24 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().default('*'),
 });
 
-const parsed = envSchema.safeParse(process.env);
+let cachedEnv: z.infer<typeof envSchema> | undefined;
 
-if (!parsed.success) {
-  throw new Error(`Invalid environment variables: ${JSON.stringify(parsed.error.flatten().fieldErrors)}`);
+export function getEnv(): z.infer<typeof envSchema> {
+  if (!cachedEnv) {
+    const parsed = envSchema.safeParse(process.env);
+    if (!parsed.success) {
+      throw new Error(`Invalid environment variables: ${JSON.stringify(parsed.error.flatten().fieldErrors)}`);
+    }
+    cachedEnv = parsed.data;
+  }
+  return cachedEnv;
 }
 
-export const env = parsed.data;
-export type Env = typeof env;
+export const env = new Proxy({} as z.infer<typeof envSchema>, {
+  get(_target, prop: string | symbol) {
+    const envObj = getEnv();
+    return Reflect.get(envObj, prop);
+  },
+});
+
+export type Env = z.infer<typeof envSchema>;

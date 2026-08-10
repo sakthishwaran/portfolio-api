@@ -42,6 +42,7 @@ export default async function handler(
 
     res.end(response.rawPayload);
   } catch (error: unknown) {
+    // eslint-disable-next-line no-console
     console.error('Vercel Serverless Handler Failure:', error);
     const message = error instanceof Error ? error.message : 'Internal Server Error';
     res.statusCode = 500;
