@@ -9,8 +9,7 @@
     "moduleDetection": "force",
     "allowJs": true,
     "types": [
-      "bun",
-      "node"
+      "bun"
     ],
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,

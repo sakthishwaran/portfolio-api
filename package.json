@@ -21,7 +21,6 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
-    "@types/node": "^26.2.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
