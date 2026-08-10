@@ -4,7 +4,6 @@ export interface ContactDto {
   id: string;
   fullName: string;
   email: string;
-  subject: string;
   message: string;
   createdAt: string;
   updatedAt: string;
@@ -15,8 +14,7 @@ export function toContactDto(entity: ContactEntity): ContactDto {
     id: entity.id,
     fullName: entity.fullName,
     email: entity.email,
-    subject: entity.subject,
-    message: entity.message,
+    message: entity.message ?? '',
     createdAt: entity.createdAt.toISOString(),
     updatedAt: entity.updatedAt.toISOString(),
   };

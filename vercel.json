@@ -1,9 +1,14 @@
 {
-  "outputDirectory": "dist/portfolio/browser",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.ts": {
+      "runtime": "nodejs22.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/api"
     }
   ]
 }

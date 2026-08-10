@@ -5,7 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "bunx tsc --noEmit",
     "dev": "bun run --watch app/src/index.ts",
     "start": "bun run app/src/index.ts",
     "typecheck": "tsc --noEmit",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
+    "@types/node": "^26.2.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
